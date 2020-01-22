@@ -14,6 +14,20 @@ loadCSS("https://fonts.googleapis.com/icon?family=Material+Icons");;loadCSS("htt
 
 <title>تحويل...</title>
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<div id="outlink">
+<span class="countdown" id="countdown"><span class="timer" id="timer">0</span>
+<br/>
+ثواني</span><button class="waves-effect" id="nextbutton" style="display: none;">
+الرابط جاهز
+</button>
+</div>
+
+
+<script type="text/javascript">
+if($.urlParam=function(n){var t=new RegExp("[?&]"+n+"=([^&#]*)").exec(window.location.href);return null==t?null:decodeURI(t[1])||0},null!=$.urlParam("from")){var countdown=$("#countdown"),nextbutton=$("#nextbutton"),time=10;function CountDown(){document.getElementById("timer").innerHTML=time,(time-=1)<0?countdown.fadeOut("slow",function(){nextbutton.fadeIn()}):window.setTimeout("CountDown()",1e3)}CountDown(),nextbutton.on("click",function(){var n=aesCrypto.decrypt(convertstr($.urlParam("from")),convertstr("root"));window.location.href=n})}
+ $("#menu").addClass('hide');
+
+</script>
 
 <style>
 .countdown{color:#FFFFFF;border:2px solid #888;border-radius:50%;display:block;font-size:16px;font-weight:300;height:100px;line-height:18px;margin:0 auto;padding:29px 0 0;width:40%}
